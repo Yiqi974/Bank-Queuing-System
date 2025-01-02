@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Good Counter</title>
+</head>
+<body>
+<h1>A Good Counter</h1>
+    <h2>{{result['branch']}}</h2>
+<h2>Counter id</h2>
+<h2>{{result['counterid']}}</h2>
+<h2>Counter type</h2>
+<form id="form_changedomain"
+      action="{{ url_for('counter_changedomain', branch=result['branch'], counter=result['counterid']) }}"
+      method="get">
+    <select type="submit" name="domain">
+        <option value="personal" {% if result[
+        "domain"] == "personal" %}selected{% endif %}>Personal</option>
+        <option value="business" {% if result[
+        "domain"] == "business" %}selected{% endif %}>Business</option>
+        <option value="priority" {% if result[
+        "domain"] == "priority" %}selected{% endif %}>Priority</option>
+    </select>
+    <input type="submit" value="change">
+    <h2>{{ result["domain"] }}</h2>
+</form>
+<br>
+<form id="form_next" action="{{ url_for('counter_next', branch=result['branch'], counter=result['counterid']) }}"
+      method="get">
+    <button type="submit" name="next">NEXT</button>
+    <h2>Current Number</h2>
+    <h2>{{ result["inprogress"] }}</h2>
+</form>
+<br>
+<form id="form_hold" action="{{ url_for('counter_hold', branch=result['branch'], counter=result['counterid']) }}"
+      method="get">
+    <button type="submit" name="hold">HOLD</button>
+</form>
+<br>
+<form id="form_reschedule"
+      action="{{ url_for('counter_reschedule', branch=result['branch'], counter=result['counterid']) }}" method="get">
+    <h2>Hold List</h2>
+    <select name="phone">
+        {% for customer in result["holdlist"] %}
+        <option value="{{ customer }}">{{ customer }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Reschedule">
+</form>
+</body>
+<script>
+
+</script>
+</html>

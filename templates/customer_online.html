@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Online</title>
+    <link rel="stylesheet" type="text/css" href="/static/style_customer.css">
+</head>
+<body>
+<img src="/static/logo.png" alt="logo" id="logo">
+<p4 id="header">Customer Online</p4>
+<p3 id='welcome'>Hi, welcome to BigBank!</p3>
+<p3 id='notiftext'>Notification</p3>
+<p3 id='output'>{{ output }}</p3>
+<p3 id='output1'>{{ output1 }}</p3>
+
+<form id="form_cus"
+      action="{{url_for('Customer_online', branch = branch_return['branch_selected'])}}" method="POST">
+    <div id="container">
+        <div id="get">
+            <h2 id="getque">Get Queue</h2>
+            <p1>Branch</p1>
+            <select name="branch" id="branch" class="select">
+                {% for value in branch_return['branch'] %}
+                <option value="{{ value }}" {% if value== branch_return[
+                'branch_selected'] %}selected{% endif %}>{{ value }}</option>
+                {% endfor %}
+            </select>
+            <p1>Counter Type</p1>
+            <select name="domain" id="domain" class="select">
+                <option value="business">business</option>
+                <option value="priority">priority</option>
+                <option value="personal">personal</option>
+            </select>
+
+            <p1>Name</p1>
+            <input type="text" name="name" value=""><br><br>
+            <p1>Phone number</p1>
+            <input type="text" name="phone" value=""><br><br>
+
+            <p1>Operation</p1>
+            <input type="submit" value="GET QUEUE" name="getqueue">
+        </div>
+        <div id="check_and_cancel">
+            <h2 id="ccqueue">Check or Cancel Queue</h2>
+            <p3 id="explain">Please input your queue or phone number</p3>
+            <br>
+            <p1>Branch</p1>
+            <select name="branch_for_search" id="branch_for_search" class="select">
+                {% for value in branch_return['branch'] %}
+                <option value="{{ value }}" >{{ value }}</option>
+                {% endfor %}</select>
+            <p1>Queue number</p1>
+            <input type="text" name="queuenum" value=""><br><br>
+            <p1>Phone number</p1>
+            <input type="text" name="phonenum" value=""><br><br>
+
+            <p1>Operation</p1>
+            <input type="submit" value="CHECK QUEUE" name="checkqueue">
+            <input type="submit" value="CANCEL QUEUE" name="cancelqueue">
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>

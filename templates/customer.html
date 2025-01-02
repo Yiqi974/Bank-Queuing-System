@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer</title>
+    <link rel="stylesheet" type="text/css" href="/static/style_customer.css">
+</head>
+<body>
+<img src="/static/logo.png" alt="logo" id="logo">
+<p4 id = "header">Customer</p4>
+<p3 id = 'welcome'>Hi, welcome to {{result['branch']}} branch!</p3>
+<p3 id = 'notiftext'>Notification</p3>
+<p3 id = 'output'>{{ output }}</p3>
+<p3 id = 'output1'>{{ output1 }}</p3>
+
+
+
+<form id="form_cus" 
+action="{{url_for('Customer', branch = result['branch'])}}" method = "POST">
+<div id="container">
+    <div id="get">
+        <h2 id="getque"> Get Queue</h2>
+        <p1>Counter Type</p1>
+        <select name = "domain" id = "domain" class="select">
+        <option value ="business">business</option>
+        <option value ="priority">priority</option>
+        <option value ="personal">personal</option>
+        <option value ="all">all</option>
+        </select>
+    
+        <p1>Name</p1>
+        <input type="text" name="name" value=""><br><br>
+        <p1>Phone number</p1>
+        <input type="text" name="phone" value=""><br><br>
+    
+        <p1>Operation</p1>
+        <input type="submit" value="GET QUEUE" name="getqueue">       
+    </div>
+    <div id="check_and_cancel">
+        <h2 id="ccqueue">Check or Cancel Queue</h2>
+        <p3 id="explain">Please input your queue or phone number</p3><br>
+        <p1>Queue number</p1>
+        <input type="text" name="queuenum" value=""><br><br>
+        <p1>Phone number</p1>
+        <input type="text" name="phonenum" value=""><br><br>
+    
+        <p1>Operation</p1>
+        <input type="submit" value="CHECK QUEUE" name="checkqueue">
+        <input type="submit" value="CANCEL QUEUE" name="cancelqueue">        
+    </div>
+</div>
+</form>
+
+<!-- <div id = notif>
+<p2 id = notiftext>Notification</p2>
+<p2>{{ output }}</p2>
+<div> -->
+
+</body>
+</html>

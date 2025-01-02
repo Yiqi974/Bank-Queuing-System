@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRO</title>
+    <link rel="stylesheet" type="text/css" href="/static/style_cro.css">
+</head>
+<body>
+<img src="/static/logo.png" alt="logo" id="logo">
+<p4 id="header">CRO</p4>
+<form method="post" action="{{url_for('cro')}}" method="POST">
+    <p3 id='welcome'>Welcome CRO!</p3>
+    <div id="container">
+        <div id="input">
+            <p1>Branch</p1>
+            <select name="branch" id="branch" class="select">
+                {% for value in branch_return['branch'] %}
+                <option value="{{ value }}" {% if value== branch_return[
+                'branch_selected'] %}selected{% endif %}>{{ value }}</option>
+                {% endfor %}
+                <option value="all" {% if branch_return[
+                'branch_selected'] == "all" %}selected{% endif %}>all</option>
+            </select>
+
+            <p1>Domain</p1>
+            <select name="domain" id="domain" class="select">
+                <option value="business" {% if domain_return==
+                "business" %}selected{% endif %}>business</option>
+                <option value="priority" {% if domain_return==
+                "priority" %}selected{% endif %}>priority</option>
+                <option value="personal" {% if domain_return==
+                "personal" %}selected{% endif %}>personal</option>
+                <option value="all" {% if domain_return==
+                "all" %}selected{% endif %}>all</option>
+            </select>
+
+            <p1>Operations</p1>
+            <input type="submit" value="STOP/CONTINUE" name="action1"/>
+            <input type="submit" value="REINITIATE" name="action2"/>
+            <input type="submit" value="VIEW" name="action3"/>
+            <p1>(Please select only 1 domain and 1 branch for viewing!)</p1><br><br>
+</form>
+</div>
+
+
+<div id=notif>
+    <p2 id="notiftext">Notification</p2>
+    <p class="output_p">{{ output }}</p>
+    {{data}}
+
+</div>
+
+</body>
+<script>
+
+</script>
+</html>

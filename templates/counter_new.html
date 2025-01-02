@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+    <link rel="stylesheet" type="text/css" href="/static/style_counter.css">
+</head>
+<body>
+<img src="/static/logo.png" alt="logo" id="logo">
+<p4 id = "header">{{result['branch']}}&nbsp;{{result['counterid']}} </p4>
+<p3 id = 'notiftext'>Notification</p3>
+<p3 id = 'output'>{{noti}}</p3>
+
+<form id="form_changedomain"
+      action="{{ url_for('counter', branch=result['branch'], counter=result['counterid']) }}"
+      method="post">
+
+    <div id = "container">
+        <div id = "info">
+            <h2>Counter Type: {{ result["domain"] }}</h2>
+            <p3 id="explain">Change your domain if not match</p3>
+                <select name="domain" class = 'select'>
+                    <option value="personal" {% if result[
+                    "domain"] == "personal" %}selected{% endif %}>personal</option>
+                    <option value="business" {% if result[
+                    "domain"] == "business" %}selected{% endif %}>business</option>
+                    <option value="priority" {% if result[
+                    "domain"] == "priority" %}selected{% endif %}>priority</option>
+                </select>
+                <input type="submit" value="CHANGE" name="change_domain">
+        </div>
+    
+    
+    <div id = "operation">
+        <button type="submit" value="NEXT" name="next">NEXT</button><br>
+        <p1>Current number: {{ result["inprogress"] }}</p1><br><br>
+        <button type="submit" value="HOLD" name="hold">HOLD</button><br><br>
+    
+        <p1>Queue number</p1>
+        <input type="text" name="queue_num">
+        <input type="submit" value="RESCHEDULE" name="Reschedule">
+</div>
+</div>
+</form>
+    
+</body>
+</html>

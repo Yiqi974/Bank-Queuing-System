@@ -1,0 +1,139 @@
+.whole {
+    height:75vh;
+    width:100%;
+    padding-top: -20px;
+}
+.rightpart {
+    width:50%;
+    height:100%;
+    float:right;
+}
+.leftpart-up{
+    height: 50%;
+    border-right:solid rgba(83, 82, 82, 0.264);
+}
+.leftpart-down{
+    margin-top: -60px;
+    height:50%;
+    border-right:solid rgba(83, 82, 82, 0.264);
+}
+.table1 {
+    margin: 0 auto;
+}
+.table2{
+    
+    margin: 0 auto;
+}
+.table3{
+    margin: 0 auto;
+}
+
+#header {
+    font-family:cursive;
+    font-weight:lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color:#000000;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    height: 5px; /* adjust height as needed */
+    line-height: 20px; /* adjust line-height to match height */
+  }
+
+h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight:bolder;
+    font-family: system-ui;
+    /* background-color: #b7ccf1; */
+    /* border: 0.6px solid #d8d8d8; */
+    /* border-radius: calc(0.5em + 0.25em + 0.1em); */
+    color: #000000;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    height: 5px; /* adjust height as needed */
+    line-height: 30px; /* adjust line-height to match height */
+}
+
+th {
+    background-color:#1f5cc5;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+}
+
+td {
+padding: 15px;
+text-align: center;
+border-bottom: 1px solid rgb(196, 192, 192);
+}
+
+#logo {
+    float: left;
+    clear: left;
+    width: 100px; /* adjust the width as needed */
+    height: 75px; /* adjust the height as needed */
+    margin-top: 4px; /* adjust the margin as needed */
+    margin-left: 5%; /* adjust the margin as needed */
+}
+
+#current {
+    font-size: 20px;
+    font-family:cursive;
+    height: 20px;
+    line-height: 80px;
+    font-weight: lighter;
+    font-style:italic
+}
+
+.p1 {
+    font-size: 18px;
+    text-align: center;
+    font-family:cursive;
+    font-style:italic
+}
+
+
+/* #table3 {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(249, 250, 249);
+    box-shadow: 0 0 50px rgba(7, 7, 7, 0.1);
+}
+
+#table4 {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(249, 250, 249);
+    box-shadow: 0 0 50px rgba(7, 7, 7, 0.1);
+}
+
+#table5 {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(249, 250, 249);
+    box-shadow: 0 0 50px rgba(7, 7, 7, 0.1);
+}
+
+#table6 {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(249, 250, 249);
+    box-shadow: 0 0 50px rgba(7, 7, 7, 0.1);
+}
+
+
+#table7 {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(249, 250, 249);
+    box-shadow: 0 0 50px rgba(7, 7, 7, 0.1);
+} */
